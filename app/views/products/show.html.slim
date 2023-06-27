@@ -1,0 +1,19 @@
+p
+  strong Name:
+  = @product.name
+
+p
+  strong Size:
+  = @product.size
+
+p
+  strong Price: 
+  = @product.price
+
+
+= image_tag @product.main_image, width: '500' if @product.main_image.attached?
+br
+= render 'review', review: @review
+= link_to 'Edit', edit_product_path(@product)
+|
+= link_to 'Back', products_path
